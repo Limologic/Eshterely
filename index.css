@@ -1,22 +1,26 @@
+.name{
+  font-weight: bold;
+}
 
+.price{
+  color: #11c;
+}
 
+.category{
+  font-style: italic;
+}
 
+.book img{
+  width: 100px;
+}
 
+.music img{
+  width: 100px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.games img{
+  width: 100px;
+}
 
 .footer {
   position: absolute;

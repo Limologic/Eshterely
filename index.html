@@ -3,6 +3,7 @@
   <head>
     <title></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
   </head>
   <body class="container">
     <header class="row">
@@ -12,25 +13,88 @@
           <!-- logo and brand name -->
           <a class="navbar-brand" href="#">
             <img id="logo" style="margin-top:-10px" height="40px" src="logo.png" alt="logo" />
-            <a class="navbar-brand" href="#">Eshterely.com Your Shopping Zone!</a>
+            <a class="navbar-brand" href="#">Eshterely.com<span class="small">, your shopping zone!</span></a>
           </a>
 
           <!-- Menu -->
           <ul class="nav navbar-nav">
             <li class="active"><a class=" " href="#">Home</a></li>
-            <li class=""><a class=" " href="#">Books</a></li>
-            <li class=""><a class=" " href="#">Music</a></li>
-            <li class=""><a class=" " href="#">Movies</a></li>
-            <li class=""><a class=" " href="#">Games</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class=""><a class=" " href="#">Books</a></li>
+                <li class=""><a class=" " href="#">Music</a></li>
+                <li class=""><a class=" " href="#">Movies</a></li>
+                <li class=""><a class=" " href="#">Games</a></li>
+                <!-- <li role="separator" class="divider"></li> -->
+              </ul>
+              <li class=""><a class="" href="cart.html">Cart <span class="badge">6</span></a></li>
+            </li>
           </ul>
 
           <!-- Menu (logged in user) -->
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
           <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link"><em>username</em></a></p>
         </div>
       </nav>
     </header>
-    <content select="">
 
+
+    <content class="row">
+      <!-- Row 1 -->
+      <div class="row">
+        <div id="book1" class="panel panel-success col-md-4 book">
+          <div class="panel-heading name">The life &amp; death of I don't know who</div>
+          <div class="panel-body">
+            <div class="category">book</div>
+            <div class="price">120 LE</div>
+            <img src="http://pngimg.com/upload/book_PNG2111.png" alt="" />
+          </div>
+        </div>
+        <div id="book2" class="panel panel-success col-md-4 book">
+          <div class="panel-heading name">Javascript, the rabit hole</div>
+          <div class="panel-body">
+            <div class="category">book</div>
+            <div class="price">180 LE</div>
+            <img src="http://pngimg.com/upload/book_PNG2111.png" alt="" />
+          </div>
+        </div>
+        <div id="book3" class="panel panel-success col-md-4 book">
+          <div class="panel-heading name">UFOs, and other humanly objects</div>
+          <div class="panel-body">
+            <div class="category">book</div>
+            <div class="price">90 LE</div>
+            <img src="http://pngimg.com/upload/book_PNG2111.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <!-- Row 2 -->
+      <div class="row">
+        <div id="album1" class="panel panel-info col-md-4 music">
+          <div class="panel-heading name">The sound of silence</div>
+          <div class="panel-body">
+            <div class="category">Music</div>
+            <div class="price">50 LE</div>
+            <img src="http://icons.iconarchive.com/icons/dtafalonso/android-lollipop/512/Headphones-Play-Music-icon.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <!-- Row 3 -->
+      <div class="row">
+        <div id="game1" class="panel panel-warning col-md-4 games">
+          <div class="panel-heading name">Gran Turismo</div>
+          <div class="panel-body">
+            <div class="category">Games</div>
+            <div class="price">500 LE</div>
+            <img src="http://icons.iconarchive.com/icons/dtafalonso/android-lollipop/512/Play-Games-icon.png" alt="" />
+          </div>
+        </div>
+      </div>
     </content>
 
     <!-- <footer class="footer">
@@ -40,7 +104,8 @@
       </div>
     </footer> -->
 
-    <div id="footer" style="width:900px">
+    <div id="footer">
+      <hr>
       <p>
         <img src="logo.png">
         <a class="yourshoppingzone" href="http://www.ebay.com/">Eshterely.com Your Shopping Zone!</a>
