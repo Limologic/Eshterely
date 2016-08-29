@@ -12,23 +12,31 @@
   font-style: bold;
   text-align: center;
 }
-
-.book img{
+.content-img{
   width: 100px;
+  display: block;
+  margin: 0 auto;
+}
+.book{
 }
 
-.music img{
-  width: 100px;
+.music{
 }
 
-.games img{
-  width: 100px;
+.games{
+
 }
-.panel-body{
-  min-height: 150px;
-  max-height: 150px;
-  overflow-y: auto;;
+.desc{
+  min-height: 130px;
+  max-height: 130px;
+  overflow-y: auto;
+
   /*overflow-y: scroll;*/
+}
+
+.panel{
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .footer {
