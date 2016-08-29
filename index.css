@@ -4,10 +4,13 @@
 
 .price{
   color: #11c;
+  text-align: center;
+  /*border: solid 1px #CCC;*/
 }
 
 .category{
-  font-style: italic;
+  font-style: bold;
+  text-align: center;
 }
 
 .book img{
