@@ -24,6 +24,12 @@
 .games img{
   width: 100px;
 }
+.panel-body{
+  min-height: 180px;
+  max-height: 180px;
+  overflow-y: auto;;
+  /*overflow-y: scroll;*/
+}
 
 .footer {
   position: absolute;
