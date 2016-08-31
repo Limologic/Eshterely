@@ -3,7 +3,8 @@
 }
 
 .price{
-  color: #11c;
+  color: #777;
+  font-weight: bold;
   text-align: center;
   /*border: solid 1px #CCC;*/
 }
