@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Eshterely.com: Your Shopping Zone!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> -->
+    <link rel="stylesheet" href="eshterely.css">
+  </head>
+  <body class="container">
+    <header class="row">
+      <nav class="nav navbar-inverse">
+        <div class="container-fluid">
+
+          <!-- logo and brand name -->
+          <a class="navbar-brand" href="#">
+            <img id="logo" style="margin-top:-10px" height="40px" src="logo.png" alt="logo" />
+            <a class="navbar-brand" href="index.html">Eshterely <span class="small"> your shopping zone!</span></a>
+          </a>
+
+          <!-- Menu -->
+          <ul class="nav navbar-nav">
+            <li class="active"><a class=" " href="index.html">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class=""><a class=" " href="#">Books</a></li>
+                <li class=""><a class=" " href="#">Music</a></li>
+                <li class=""><a class=" " href="#">Movies</a></li>
+                <li class=""><a class=" " href="#">Games</a></li>
+                <!-- <li role="separator" class="divider"></li> -->
+              </ul>
+              <li class=""><a class="" href="cart.html">Cart <span class="badge">6</span></a></li>
+            </li>
+          </ul>
+
+          <!-- Menu (logged in user) -->
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+          <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link"><em>username</em></a></p>
+        </div>
+      </nav>
+    </header>
+
+
+    <content class="row">
+      <!-- Row 1 -->
+      <div class="row">
+        <h3>Books</h3>
+        <div id="book1" class="panel panel-success col-md-4 book">
+          <div class="panel-heading name">The life &amp; death of I don't know who</div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img class="content-img" src="http://pngimg.com/upload/book_PNG2111.png" alt="" />
+              </div>
+              <div class="col-md-6">
+                <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer container-fluid">
+            <div class="col-md-4">
+              <div class="category">Book</div>
+            </div>
+            <div class="col-md-4">
+              <div class="price">120 LE</div>
+            </div>
+            <div class="col-md-4">
+              <a role="button" class="btn btn-primary btn-xs" href="details.html">Add to cart</a>
+            </div>
+          </div>
+        </div>
+        <div id="book2" class="panel panel-success col-md-4 book">
+          <div class="panel-heading name">Javascript, the rabit hole</div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img class="content-img" src="http://pngimg.com/upload/book_PNG2111.png" alt="" />
+              </div>
+              <div class="col-md-6">
+                <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer container-fluid">
+            <div class="col-md-4">
+              <div class="category">Book</div>
+            </div>
+            <div class="col-md-4">
+              <div class="price">180 LE</div>
+            </div>
+            <div class="col-md-4">
+              <a role="button" class="btn btn-primary btn-xs" href="details.html">Add to cart</a>
+            </div>
+          </div>
+        </div>
+        <div id="book3" class="panel panel-success col-md-4 book">
+          <div class="panel-heading name">UFOs, and other humanly objects</div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img class="content-img" src="http://pngimg.com/upload/book_PNG2111.png" alt="" />
+              </div>
+              <div class="col-md-6">
+                <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer container-fluid">
+            <div class="col-md-4">
+              <div class="category">Book</div>
+            </div>
+            <div class="col-md-4">
+              <div class="price">90 LE</div>
+            </div>
+            <div class="col-md-4">
+              <a role="button" class="btn btn-primary btn-xs" href="details.html">Add to cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Row 2 -->
+      <div class="row">
+        <h3>Music</h3>
+        <div id="album1" class="panel panel-info col-md-4 music">
+          <div class="panel-heading name">The sound of silence</div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img class="content-img" src="http://icons.iconarchive.com/icons/dtafalonso/android-lollipop/512/Headphones-Play-Music-icon.png" alt="" />
+              </div>
+              <div class="col-md-6">
+                <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer container-fluid">
+            <div class="col-md-4">
+              <div class="category">Music</div>
+            </div>
+            <div class="col-md-4">
+              <div class="price">50 LE</div>
+            </div>
+            <div class="col-md-4">
+              <a role="button" class="btn btn-primary btn-xs" href="details.html">Add to cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Row 3 -->
+      <div class="row">
+        <h3>Games</h3>
+        <div id="game1" class="panel panel-warning col-md-4 games">
+          <div class="panel-heading name">Gran Turismo</div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-6">
+                <img class="content-img" src="http://icons.iconarchive.com/icons/dtafalonso/android-lollipop/512/Play-Games-icon.png" alt="" />
+              </div>
+              <div class="col-md-6">
+                <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer container-fluid">
+            <div class="col-md-4">
+              <div class="category">Games</div>
+            </div>
+            <div class="col-md-4">
+              <div class="price">500 LE</div>
+            </div>
+            <div class="col-md-4">
+              <a role="button" class="btn btn-primary btn-xs" href="details.html">Add to cart</a>
+            </div>
+          </div>
+        </div>
+        <div id="game2" class="panel panel-warning col-md-4 games">
+          <div class="panel-heading name">Need For Speed</div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-6 center-block">
+                <img class="content-img" src="http://icons.iconarchive.com/icons/dtafalonso/android-lollipop/512/Play-Games-icon.png" alt="" />
+              </div>
+              <div class="col-md-6">
+                <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer container-fluid">
+            <div class="col-md-4">
+              <div class="category">Games</div>
+            </div>
+            <div class="col-md-4">
+              <div class="price">450 LE</div>
+            </div>
+            <div class="col-md-4">
+              <a role="button" class="btn btn-primary btn-xs" href="details.html">Add to cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </content>
+<!-- footer -->
+    <footer class="footer">
+			<div class="footer-left">
+        <img class="content-img" src="logo.png">
+        <h3>Eshterely<span>.com</span></h3>
+				<p class="footer-links">
+					<a href="#">Home</a> - <a href="#">Blog</a> - <a href="#">Pricing</a> - <a href="#">About</a> - <a href="#">FAQ</a> - <a href="#">Contact</a>
+				</p>
+				<p class="footer-company-name">Eshterely Inc. Copyrights &copy; 2016 All Rights Reserved.</p>
+			</div>
+			<div class="footer-center">
+				<div>
+					<i class="map-marker"></i>
+					<p><span>Building 115, 26 Alexandria Desert Rd, Giza Governorate 12577 </span> Cairo, Egypt</p>
+				</div>
+				<div>
+					<i class="phone"></i>
+					<p>+1 000 123456</p>
+				</div>
+				<div>
+					<i class="envelope"></i>
+					<p><a href="#">info@eshterely.com</a></p>
+				</div>
+			</div>
+			<div class="footer-right">
+				<p class="footer-company-about">
+					<span>About Us</span>
+					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula.</p>
+				<div class="footer-icons">
+					<a href="#"><i class="facebook"></i></a>
+					<a href="#"><i class="twitter"></i></a>
+					<a href="#"><i class="instagram"></i></a>
+          <a href="#"><i class="linkedin"></i></a>
+				</div>
+			</div>
+		</footer>
+
+    <!-- jQuery for drop down in Nav bar to work (categories)-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

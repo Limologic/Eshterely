@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Eshterely.com: Your Shopping Zone!</title>
+    <title>Eshterely.com | Sign In</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 
     <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> -->
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="eshterely.css">
   </head>
   <body class="container">
     <header class="row">
@@ -16,7 +16,7 @@
 
           <!-- logo and brand name -->
           <a class="navbar-brand" href="#">
-            <img class="content-img" id="logo" style="margin-top:-10px" height="40px" src="logo.png" alt="logo" />
+            <img id="logo" style="margin-top:-10px" height="40px" src="logo.png" alt="logo" />
             <a class="navbar-brand" href="index.html">Eshterely <span class="small"> your shopping zone!</span></a>
           </a>
 
@@ -32,7 +32,7 @@
                 <li class=""><a class=" " href="#">Games</a></li>
                 <!-- <li role="separator" class="divider"></li> -->
               </ul>
-              <li class=""><a class="" href="cart.html">Cart <span class="badge">6</span></a></li>
+              <!-- <li class=""><a class="" href="cart.html">Cart <span class="badge">6</span></a></li> -->
             </li>
           </ul>
 
@@ -43,148 +43,56 @@
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
           </form>
-          <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link"><em>username</em></a></p>
+          <p class="navbar-text navbar-right"></p>
         </div>
       </nav>
     </header>
-
-
+    
     <content class="row">
-      <!-- Row 1 -->
-      <div class="row">
-        <div id="book1" class="panel panel-success col-md-4 book">
-          <div class="panel-heading name">The life &amp; death of I don't know who</div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-6">
-                <img class="content-img" src="http://pngimg.com/upload/book_PNG2111.png" alt="" />
+
+      <!-- Signin form start -->
+      <div id="signin" class="panel panel-default col-md-offset-3 col-md-6">
+        <div class="panel-heading name">Please login</div>
+        <div class="panel-body">
+          <div class="row">
+            <form class="form-horizontal" action="main.html" method="post">
+              <!-- USERNAME -->
+              <div class="form-group">
+                <label class="col-sm-4 control-label" for="name">Username</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" name="name" value="" placeholder="Your username">
+                </div>
               </div>
-              <div class="col-md-6">
-                <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</div>
+              <!-- PASSWORD -->
+              <div class="form-group">
+                <label class="col-sm-4 control-label" for="pass">Password</label>
+                <div class="col-sm-6">
+                  <input type="password" class="form-control" name="pass" value="" placeholder="Your password">
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="panel-footer container-fluid">
-            <div class="col-md-6">
-              <div class="category">Book</div>
-            </div>
-            <div class="col-md-6">
-              <div class="price">120 LE</div>
-            </div>
-          </div>
-        </div>
-        <div id="book2" class="panel panel-success col-md-4 book">
-          <div class="panel-heading name">Javascript, the rabit hole</div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-6">
-                <img class="content-img" src="http://pngimg.com/upload/book_PNG2111.png" alt="" />
+              <!-- REMEMBER ME -->
+              <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-10">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> Remember me
+                    </label>
+                  </div>
+                </div>
               </div>
-              <div class="col-md-6">
-                <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+              <!-- SUBMIT BUTTON -->
+              <div class="form-group">
+                <div class="col-sm-offset-5 col-sm-10">
+                  <button type="submit" class="btn btn-default" action="" value="">Submit</button>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="panel-footer container-fluid">
-            <div class="col-md-6">
-              <div class="category">Book</div>
-            </div>
-            <div class="col-md-6">
-              <div class="price">180 LE</div>
-            </div>
-          </div>
-        </div>
-        <div id="book3" class="panel panel-success col-md-4 book">
-          <div class="panel-heading name">UFOs, and other humanly objects</div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-6">
-                <img class="content-img" src="http://pngimg.com/upload/book_PNG2111.png" alt="" />
-              </div>
-              <div class="col-md-6">
-                <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
-              </div>
-            </div>
-          </div>
-          <div class="panel-footer container-fluid">
-            <div class="col-md-6">
-              <div class="category">Book</div>
-            </div>
-            <div class="col-md-6">
-              <div class="price">90 LE</div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
-      <!-- Row 2 -->
-      <div class="row">
-        <div id="album1" class="panel panel-info col-md-4 music">
-          <div class="panel-heading name">The sound of silence</div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-6">
-                <img class="content-img" src="http://icons.iconarchive.com/icons/dtafalonso/android-lollipop/512/Headphones-Play-Music-icon.png" alt="" />
-              </div>
-              <div class="col-md-6">
-                <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</div>
-              </div>
-            </div>
-          </div>
-          <div class="panel-footer container-fluid">
-            <div class="col-md-6">
-              <div class="category">Music</div>
-            </div>
-            <div class="col-md-6">
-              <div class="price">50 LE</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Row 3 -->
-      <div class="row">
-        <div id="game1" class="panel panel-warning col-md-4 games">
-          <div class="panel-heading name">Gran Turismo</div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-6">
-                <img class="content-img" src="http://icons.iconarchive.com/icons/dtafalonso/android-lollipop/512/Play-Games-icon.png" alt="" />
-              </div>
-              <div class="col-md-6">
-                <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</div>
-              </div>
-            </div>
-          </div>
-          <div class="panel-footer container-fluid">
-            <div class="col-md-6">
-              <div class="category">Games</div>
-            </div>
-            <div class="col-md-6">
-              <div class="price">500 LE</div>
-            </div>
-          </div>
-        </div>
-        <div id="game2" class="panel panel-warning col-md-4 games">
-          <div class="panel-heading name">Need For Speed</div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-6 center-block">
-                <img class="content-img" src="http://icons.iconarchive.com/icons/dtafalonso/android-lollipop/512/Play-Games-icon.png" alt="" />
-              </div>
-              <div class="col-md-6">
-                <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-              </div>
-            </div>
-          </div>
-          <div class="panel-footer container-fluid">
-            <div class="col-md-6">
-              <div class="category">Games</div>
-            </div>
-            <div class="col-md-6">
-              <div class="price">450 LE</div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+      <!-- Signin form end -->
+
     </content>
 
     <footer class="footer">
@@ -237,12 +145,19 @@
 				</p>
 
 				<div class="footer-icons">
+<<<<<<< HEAD
 
 					<a href="#"><i class="fa fa-facebook"></i></a>
 					<a href="#"><i class="fa fa-twitter"></i></a>
 					<a href="#"><i class="fa fa-linkedin"></i></a>
 					<a href="#"><i class="fa fa-github"></i></a>
 
+=======
+					<a href="#"><i class="facebook"></i></a>
+					<a href="3"><i class="twitter"></i></a>
+					<a href="#"><i class="instagram"></i></a>
+          <a href="#"><i class="linkedin"></i></a>
+>>>>>>> 24655a6ce8aaedf6f0854a3f04b5cff4dde47292
 				</div>
 
 			</div>
