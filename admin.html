@@ -49,119 +49,98 @@
     </header>
 
     <content class="row">
+      <!-- Large modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Add Item</button>
 
-      <!-- Signin form start -->
-      <div id="signin" class="panel panel-default col-md-offset-3 col-md-6">
-        <div class="panel-heading name">Please login</div>
-        <div class="panel-body">
-          <div class="row">
-            <form class="form-horizontal" action="main.html" method="post">
-              <!-- USERNAME -->
-              <div class="form-group">
-                <label class="col-sm-4 control-label" for="name">Username</label>
-                <div class="col-sm-6">
-                  <input type="text" class="form-control" name="name" value="" placeholder="Your username">
-                </div>
-              </div>
-              <!-- PASSWORD -->
-              <div class="form-group">
-                <label class="col-sm-4 control-label" for="pass">Password</label>
-                <div class="col-sm-6">
-                  <input type="password" class="form-control" name="pass" value="" placeholder="Your password">
-                </div>
-              </div>
-              <!-- REMEMBER ME -->
-              <div class="form-group">
-                <div class="col-sm-offset-4 col-sm-10">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox"> Remember me
-                    </label>
+      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+              <h4 class="modal-title" id="mySmallModalLabel">Add items</h4> </div>
+            <div class="modal-body">
+              <div class="row">
+              <form class="form-horizontal" action="" method="post">
+                <!-- Item name -->
+                <div class="form-group">
+                  <label class="col-sm-4 control-label" for="item">Item Name</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" name="item" value="" placeholder="item name">
                   </div>
                 </div>
-              </div>
-              <!-- SUBMIT BUTTON -->
-              <div class="form-group">
-                <div class="col-sm-offset-5 col-sm-10">
-                  <button type="submit" class="btn btn-default" action="" value="">Submit</button>
+                <!-- Item price -->
+                <div class="form-group">
+                  <label class="col-sm-4 control-label" for="price">Price (LE)</label>
+                  <div class="col-sm-6">
+                    <input type="number" class="form-control" name="price" value="" placeholder="price">
+                  </div>
                 </div>
-              </div>
-            </form>
+                <!-- Item category -->
+                <div class="form-group">
+                  <label class="col-sm-4 control-label" for="categ">Category</label>
+                  <div class="col-sm-6">
+                    <select class="form-control" name="categ">
+                      <option value="books">Books</option>
+                      <option value="music">Music</option>
+                      <option value="games">Games</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- Item Description -->
+                <div class="form-group">
+                  <label class="col-sm-4 control-label" for="descrip">Desription</label>
+                  <div class="col-sm-6">
+                    <textarea class="form-control" rows="5" id="descrip" placeholder="write a short description for the new item"></textarea>
+                  </div>
+                </div>
+                <!-- SUBMIT BUTTON -->
+                <div class="form-group">
+                  <div class="col-sm-offset-5 col-sm-10">
+                    <button type="submit" class="btn btn-default" action="" value="">Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
           </div>
         </div>
       </div>
-
-      <!-- Signin form end -->
-
     </content>
-
+<!-- footer -->
     <footer class="footer">
-
 			<div class="footer-left">
-
-				<h3>Eshterely<span>.com</span></h3>
-
+        <img class="content-img" src="logo.png">
+        <h3>Eshterely<span>.com</span></h3>
 				<p class="footer-links">
-					<a href="#">Home</a>
-					-
-					<a href="#">Blog</a>
-					-
-					<a href="#">Pricing</a>
-					-
-					<a href="#">About</a>
-					-
-					<a href="#">FAQ</a>
-					-
-					<a href="#">Contact</a>
+					<a href="#">Home</a> - <a href="#">Blog</a> - <a href="#">Pricing</a> - <a href="#">About</a> - <a href="#">FAQ</a> - <a href="#">Contact</a>
 				</p>
-
 				<p class="footer-company-name">Eshterely Inc. Copyrights &copy; 2016 All Rights Reserved.</p>
 			</div>
-
 			<div class="footer-center">
-
 				<div>
-					<i class="fa fa-map-marker"></i>
+					<i class="map-marker"></i>
 					<p><span>Building 115, 26 Alexandria Desert Rd, Giza Governorate 12577 </span> Cairo, Egypt</p>
 				</div>
-
 				<div>
-					<i class="fa fa-phone"></i>
-					<p>+1 111 123456</p>
+					<i class="phone"></i>
+					<p>+1 000 123456</p>
 				</div>
-
 				<div>
-					<i class="fa fa-envelope"></i>
-					<p><a href="mailto:info@eshterely.com">info@eshterely.com</a></p>
+					<i class="envelope"></i>
+					<p><a href="#">info@eshterely.com</a></p>
 				</div>
-
 			</div>
-
 			<div class="footer-right">
-
 				<p class="footer-company-about">
 					<span>About Us</span>
-					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
-				</p>
-
+					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula.</p>
 				<div class="footer-icons">
-<<<<<<< HEAD
-
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-					<a href="#"><i class="fa fa-linkedin"></i></a>
-					<a href="#"><i class="fa fa-github"></i></a>
-
-=======
 					<a href="#"><i class="facebook"></i></a>
 					<a href="3"><i class="twitter"></i></a>
 					<a href="#"><i class="instagram"></i></a>
           <a href="#"><i class="linkedin"></i></a>
->>>>>>> 24655a6ce8aaedf6f0854a3f04b5cff4dde47292
 				</div>
-
 			</div>
-
 		</footer>
 
     <!-- jQuery for drop down in Nav bar to work (categories)-->
