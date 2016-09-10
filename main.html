@@ -48,6 +48,9 @@
       </nav>
     </header>
 
+    <div id="getheader">
+
+    </div>
 
     <content class="row">
       <!-- Row 1 -->
@@ -312,6 +315,17 @@
     <!-- jQuery for drop down in Nav bar to work (categories)-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+    <script>
+      $.ajax({
+        method: 'GET',
+        url: "test.html",
+        success:function(resp){
+          $("#getheader").html(resp)
+        }
+      })
+    </script>
 
   </body>
 </html>
