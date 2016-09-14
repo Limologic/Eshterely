@@ -29,87 +29,12 @@
       <!-- Row 1 BOOKS -->
       <div class="row">
         <h3>Books</h3>
-        <div id="book1" class="panel panel-success col-md-4 book">
-          <div class="panel-heading name">The life &amp; death of I don't know who</div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-6">
-                <a href="details.html"><img class="content-img" src="http://pngimg.com/upload/book_PNG2111.png" alt="" /></a>
-              </div>
-              <div class="col-md-6">
-                <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</div>
-              </div>
-            </div>
-          </div>
-          <div class="panel-footer container-fluid">
-            <div class="col-md-3">
-              <div class="category">Book</div>
-            </div>
-            <div class="col-md-3">
-              <div class="price">120 LE</div>
-            </div>
-            <div class="col-md-3">
-              <a role="button" class="btn btn-primary btn-xs" href="cart.html">Add to cart</a>
-            </div>
-            <div class="col-md-3">
-              <a class="btn btn-success btn-xs" href="details.html">Read more</a>
-            </div>
-          </div>
+        <div id="bookslist">
+
         </div>
-        <div id="book2" class="panel panel-success col-md-4 book">
-          <div class="panel-heading name">Javascript, the rabit hole</div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-6">
-                <a href="details.html"><img class="content-img" src="http://pngimg.com/upload/book_PNG2111.png" alt="" /></a>
-              </div>
-              <div class="col-md-6">
-                <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-              </div>
-            </div>
-          </div>
-          <div class="panel-footer container-fluid">
-            <div class="col-md-3">
-              <div class="category">Book</div>
-            </div>
-            <div class="col-md-3">
-              <div class="price">180 LE</div>
-            </div>
-            <div class="col-md-3">
-              <a role="button" class="btn btn-primary btn-xs" href="cart.html">Add to cart</a>
-            </div>
-            <div class="col-md-3">
-              <a class="btn btn-success btn-xs" href="details.html">Read more</a>
-            </div>
-          </div>
-        </div>
-        <div id="book3" class="panel panel-success col-md-4 book">
-          <div class="panel-heading name">UFOs, and other humanly objects</div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-6">
-                <a href="details.html"><img class="content-img" src="http://pngimg.com/upload/book_PNG2111.png" alt="" /></a>
-              </div>
-              <div class="col-md-6">
-                <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
-              </div>
-            </div>
-          </div>
-          <div class="panel-footer container-fluid">
-            <div class="col-md-3">
-              <div class="category">Book</div>
-            </div>
-            <div class="col-md-3">
-              <div class="price">90 LE</div>
-            </div>
-            <div class="col-md-3">
-              <a role="button" class="btn btn-primary btn-xs" href="cart.html">Add to cart</a>
-            </div>
-            <div class="col-md-3">
-              <a class="btn btn-success btn-xs" href="details.html">Read more</a>
-            </div>
-          </div>
-        </div>
+
+
+
       </div>
       <!-- Row 2 MUSIC-->
       <div class="row">
@@ -215,10 +140,129 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
     <script src="my-html-loader.js"></script>
+    <script src="products.js"></script>
     <script>
       loader("navheader.html","#getheader")
       loader("ourfooter.html","#getfooter")
     </script>
+    <script>
+      // This function takes a product object and displays it in chosen html tag location
+      var display_a_prod = function(singleProduct, htmltag){
+
+        if(Array.isArray(singleProduct)){
+          for(i=0;i<myObj.length;i++)
+            display_a_prod(singleProduct[i]); // recursion because why not :D!
+        }
+
+        else{
+          for(key in singleProduct){
+            if(key === "id"){
+              $(htmltag).append('<div id="'+singleProduct[key]+'" class="panel panel-success col-md-4 book">');
+            }
+            else if(key === "picture_url"){
+              $(htmltag).append("<div>"+'<img style="max-width:150px" src="'+singleProduct[key]+'"/></div>');
+            }
+            else {
+              $(htmltag).append('<div class="panel-heading name">'+singleProduct[key]+'</div>');
+            }
+          }
+        }
+      }
+
+      var displayProd = function(prod, htmltag){
+        for(var i=0;i<prod.length;i++)
+        {
+          var myString = "";
+          myString += '<div id="'+prod[i].id+'" class="panel panel-success col-md-4 book">';
+          myString += '  <div class="panel-heading name">'+prod[i].name+'</div>';
+          myString += '  <div class="panel-body">';
+          myString += '    <div class="row">';
+          myString += '      <div class="col-md-6">';
+          myString += '        <a href="details.html"><img class="content-img" src="'+prod[i].picture_url+'" alt="" /></a>';
+          myString += '      </div>';
+          myString += '      <div class="col-md-6">'
+          myString += '        <div class="desc small">'+prod[i].description+'</div>';
+          myString += '      </div>';
+          myString += '    </div>';
+          myString += '  </div>';
+          myString += '  <div class="panel-footer container-fluid">';
+          myString += '    <div class="col-md-3">';
+          myString += '      <div class="category">'+prod[i].category+'</div>';
+          myString += '    </div>';
+          myString += '    <div class="col-md-3">';
+          myString += '      <div class="price">'+prod[i].price+'</div>';
+          myString += '    </div>';
+          myString += '    <div class="col-md-3">';
+          myString += '      <a role="button" class="btn btn-primary btn-xs" href="cart.html">Add to cart</a>';
+          myString += '    </div>';
+          myString += '    <div class="col-md-3">';
+          myString += '      <a class="btn btn-success btn-xs" href="details.html">Read more</a>';
+          myString += '    </div>';
+          myString += '  </div>';
+          myString += '</div>';
+
+          $(htmltag).append(myString);
+
+          // $(htmltag).append('<div id="'+prod[i].id+'" class="panel panel-success col-md-4 book">');
+          // $(htmltag).append('  <div class="panel-heading name">'+prod[i].name+'</div>');
+          // $(htmltag).append('  <div class="panel-body">');
+          // $(htmltag).append('    <div class="row">');
+          // $(htmltag).append('      <div class="col-md-6">');
+          // $(htmltag).append('        <a href="details.html"><img class="content-img" src="'+prod[i].picture_url+'" alt="" /></a>');
+          // $(htmltag).append('      </div>');
+          // $(htmltag).append('      <div class="col-md-6">');
+          // $(htmltag).append('        <div class="desc small">'+prod[i].description+'</div>');
+          // $(htmltag).append('      </div>');
+          // $(htmltag).append('    </div>');
+          // $(htmltag).append('  </div>');
+          // $(htmltag).append('  <div class="panel-footer container-fluid">');
+          // $(htmltag).append('    <div class="col-md-3">');
+          // $(htmltag).append('      <div class="category">'+prod[i].category+'</div>');
+          // $(htmltag).append('    </div>');
+          // $(htmltag).append('    <div class="col-md-3">');
+          // $(htmltag).append('      <div class="price">'+prod[i].price+'</div>');
+          // $(htmltag).append('    </div>');
+          // $(htmltag).append('    <div class="col-md-3">');
+          // $(htmltag).append('      <a role="button" class="btn btn-primary btn-xs" href="cart.html">Add to cart</a>');
+          // $(htmltag).append('    </div>');
+          // $(htmltag).append('    <div class="col-md-3">');
+          // $(htmltag).append('      <a class="btn btn-success btn-xs" href="details.html">Read more</a>');
+          // $(htmltag).append('    </div>');
+          // $(htmltag).append('  </div>');
+          // $(htmltag).append('</div>');
+        }
+      }
+      displayProd(products, '#bookslist');
+      $('.container').hide().show();
+    </script>
+
+    <!-- <div id="book1" class="panel panel-success col-md-4 book">
+      <div class="panel-heading name">The life &amp; death of I don't know who</div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-6">
+            <a href="details.html"><img class="content-img" src="http://pngimg.com/upload/book_PNG2111.png" alt="" /></a>
+          </div>
+          <div class="col-md-6">
+            <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-footer container-fluid">
+        <div class="col-md-3">
+          <div class="category">Book</div>
+        </div>
+        <div class="col-md-3">
+          <div class="price">120 LE</div>
+        </div>
+        <div class="col-md-3">
+          <a role="button" class="btn btn-primary btn-xs" href="cart.html">Add to cart</a>
+        </div>
+        <div class="col-md-3">
+          <a class="btn btn-success btn-xs" href="details.html">Read more</a>
+        </div>
+      </div>
+    </div> -->
 
   </body>
 </html>

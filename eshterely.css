@@ -22,7 +22,7 @@
   text-align: center;
 }
 .content-img{
-  width: 100px;
+  height: 150px;
   display: block;
   margin: 0 auto;
 }
@@ -46,6 +46,8 @@
 .panel{
   padding-left: 0;
   padding-right: 0;
+  min-height: 250px;
+  /*height: 250px;*/
 }
 
 .full {
