@@ -170,7 +170,12 @@
         }
       }
 
-      var displayProd = function(prod, htmltag){
+      var displayProd = function(prods, htmltag, categ){
+        //Return only the same category as passed to this function 'categ'
+        var prod = _.filter(prods, function(checkprod){
+          if(checkprod.category==="books") return checkprod;
+        });
+        console.log(prod);
         for(var i=0;i<prod.length;i++)
         {
           var myString = "";
@@ -233,7 +238,7 @@
           // $(htmltag).append('</div>');
         }
       }
-      displayProd(products, '#bookslist');
+      displayProd(products, '#bookslist', 'books');
       $('.container').hide().show();
     </script>
 
