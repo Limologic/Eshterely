@@ -30,99 +30,21 @@
       <div class="row">
         <h3>Books</h3>
         <div id="bookslist">
-
+        <!-- This section will be filled dynamically by the script with list of books in products.js -->
         </div>
-
-
-
       </div>
       <!-- Row 2 MUSIC-->
       <div class="row">
         <h3>Music</h3>
-        <div id="album1" class="panel panel-info col-md-4 music">
-          <div class="panel-heading name">The sound of silence</div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-6">
-                <a href="details.html"><img class="content-img" src="http://icons.iconarchive.com/icons/dtafalonso/android-lollipop/512/Headphones-Play-Music-icon.png" alt="" /></a>
-              </div>
-              <div class="col-md-6">
-                <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</div>
-              </div>
-            </div>
-          </div>
-          <div class="panel-footer container-fluid">
-            <div class="col-md-3">
-              <div class="category">Music</div>
-            </div>
-            <div class="col-md-3">
-              <div class="price">50 LE</div>
-            </div>
-            <div class="col-md-3">
-              <a role="button" class="btn btn-primary btn-xs" href="cart.html">Add to cart</a>
-            </div>
-            <div class="col-md-3">
-              <a class="btn btn-success btn-xs" href="details.html">Read more</a>
-            </div>
-          </div>
+        <div id="musiclist">
+        <!-- This section will be filled dynamically by the script with list of music albums in products.js -->
         </div>
       </div>
       <!-- Row 3 GAMES-->
       <div class="row">
         <h3>Games</h3>
-        <div id="game1" class="panel panel-warning col-md-4 games">
-          <div class="panel-heading name">Gran Turismo</div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-6">
-                <a href="details.html"><img class="content-img" src="http://icons.iconarchive.com/icons/dtafalonso/android-lollipop/512/Play-Games-icon.png" alt="" /></a>
-              </div>
-              <div class="col-md-6">
-                <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</div>
-              </div>
-            </div>
-          </div>
-          <div class="panel-footer container-fluid">
-            <div class="col-md-3">
-              <div class="category">Games</div>
-            </div>
-            <div class="col-md-3">
-              <div class="price">500 LE</div>
-            </div>
-            <div class="col-md-3">
-              <a role="button" class="btn btn-primary btn-xs" href="cart.html">Add to cart</a>
-            </div>
-            <div class="col-md-3">
-              <a class="btn btn-success btn-xs" href="details.html">Read more</a>
-            </div>
-          </div>
-        </div>
-        <div id="game2" class="panel panel-warning col-md-4 games">
-          <div class="panel-heading name">Need For Speed</div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-6 center-block">
-                <a href="details.html"><img class="content-img" src="http://icons.iconarchive.com/icons/dtafalonso/android-lollipop/512/Play-Games-icon.png" alt="" /></a>
-              </div>
-              <div class="col-md-6">
-                <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-              </div>
-            </div>
-          </div>
-          <div class="panel-footer container-fluid">
-            <div class="col-md-3">
-              <div class="category">Games</div>
-            </div>
-            <div class="col-md-3">
-              <div class="price">450 LE</div>
-            </div>
-            <div class="col-md-3">
-              <a role="button" class="btn btn-primary btn-xs" href="cart.html">Add to cart</a>
-            </div>
-            <div class="col-md-3">
-              <a class="btn btn-success btn-xs" href="details.html">Read more</a>
-            </div>
-          </div>
+        <div id="gameslist">
+        <!-- This section will be filled dynamically by the script with list of games in products.js -->
         </div>
       </div>
     </content>
@@ -173,14 +95,22 @@
       var displayProd = function(prods, htmltag, categ){
         //Return only the same category as passed to this function 'categ'
         var prod = _.filter(prods, function(checkprod){
-          if(checkprod.category==="books") return checkprod;
+          if(checkprod.category===categ) return checkprod;
         });
         console.log(prod);
+        var panelHeadStyle = "panel-default";
+        if(categ==="books")
+          panelHeadStyle = "panel-success";
+        else if(categ==="music")
+          panelHeadStyle = "panel-info";
+        else if(categ==="games")
+          panelHeadStyle = "panel-warning";
+
         for(var i=0;i<prod.length;i++)
         {
           var myString = "";
-          myString += '<div id="'+prod[i].id+'" class="panel panel-success col-md-4 book">';
-          myString += '  <div class="panel-heading name">'+prod[i].name+'</div>';
+          myString += '<div id="'+prod[i].id+'" class="panel '+panelHeadStyle+' col-md-4">';
+          myString += '  <div class="panel-heading name '+categ+'">'+prod[i].name+'</div>';
           myString += '  <div class="panel-body">';
           myString += '    <div class="row">';
           myString += '      <div class="col-md-6">';
@@ -208,67 +138,12 @@
           myString += '</div>';
 
           $(htmltag).append(myString);
-
-          // $(htmltag).append('<div id="'+prod[i].id+'" class="panel panel-success col-md-4 book">');
-          // $(htmltag).append('  <div class="panel-heading name">'+prod[i].name+'</div>');
-          // $(htmltag).append('  <div class="panel-body">');
-          // $(htmltag).append('    <div class="row">');
-          // $(htmltag).append('      <div class="col-md-6">');
-          // $(htmltag).append('        <a href="details.html"><img class="content-img" src="'+prod[i].picture_url+'" alt="" /></a>');
-          // $(htmltag).append('      </div>');
-          // $(htmltag).append('      <div class="col-md-6">');
-          // $(htmltag).append('        <div class="desc small">'+prod[i].description+'</div>');
-          // $(htmltag).append('      </div>');
-          // $(htmltag).append('    </div>');
-          // $(htmltag).append('  </div>');
-          // $(htmltag).append('  <div class="panel-footer container-fluid">');
-          // $(htmltag).append('    <div class="col-md-3">');
-          // $(htmltag).append('      <div class="category">'+prod[i].category+'</div>');
-          // $(htmltag).append('    </div>');
-          // $(htmltag).append('    <div class="col-md-3">');
-          // $(htmltag).append('      <div class="price">'+prod[i].price+'</div>');
-          // $(htmltag).append('    </div>');
-          // $(htmltag).append('    <div class="col-md-3">');
-          // $(htmltag).append('      <a role="button" class="btn btn-primary btn-xs" href="cart.html">Add to cart</a>');
-          // $(htmltag).append('    </div>');
-          // $(htmltag).append('    <div class="col-md-3">');
-          // $(htmltag).append('      <a class="btn btn-success btn-xs" href="details.html">Read more</a>');
-          // $(htmltag).append('    </div>');
-          // $(htmltag).append('  </div>');
-          // $(htmltag).append('</div>');
         }
       }
       displayProd(products, '#bookslist', 'books');
-      $('.container').hide().show();
+      displayProd(products, '#musiclist', 'music');
+      displayProd(products, '#gameslist', 'games');
     </script>
-
-    <!-- <div id="book1" class="panel panel-success col-md-4 book">
-      <div class="panel-heading name">The life &amp; death of I don't know who</div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-md-6">
-            <a href="details.html"><img class="content-img" src="http://pngimg.com/upload/book_PNG2111.png" alt="" /></a>
-          </div>
-          <div class="col-md-6">
-            <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</div>
-          </div>
-        </div>
-      </div>
-      <div class="panel-footer container-fluid">
-        <div class="col-md-3">
-          <div class="category">Book</div>
-        </div>
-        <div class="col-md-3">
-          <div class="price">120 LE</div>
-        </div>
-        <div class="col-md-3">
-          <a role="button" class="btn btn-primary btn-xs" href="cart.html">Add to cart</a>
-        </div>
-        <div class="col-md-3">
-          <a class="btn btn-success btn-xs" href="details.html">Read more</a>
-        </div>
-      </div>
-    </div> -->
 
   </body>
 </html>

@@ -48,7 +48,7 @@ var products = [
     picture_url: "images/catch22.jpg"
   },
   {
-    id: "",
+    id: "dark",
     name: "Dark Side of the Moon",
     category: "music",
     description: ["Collector's Edition", "Trippy", "Good for late night existential crises"],
@@ -56,7 +56,7 @@ var products = [
     picture_url: "http://i.kinja-img.com/gawker-media/image/upload/s--9N1Ijk1t--/c_fit,fl_progressive,q_80,w_636/1940ob66cyu2ljpg.jpg"
   },
   {
-    id: "",
+    id: "thriller",
     name: "Thriller",
     category: "music",
     description: ["Classic MJ", "The 80's greatest contribution to human progress"],
@@ -64,11 +64,43 @@ var products = [
     picture_url: "http://cps-static.rovicorp.com/3/JPG_400/MI0000/677/MI0000677650.jpg"
   },
   {
-    id: "",
+    id: "ella",
     name: "Ella & Luis",
     category: "music",
     description: ["How could you not?", "Seriously, though..."],
     price: 110,
     picture_url: "http://ecx.images-amazon.com/images/I/51713fx1VdL._SY300_.jpg"
+  },
+  {
+    id: "pacman",
+    name: "Pac man",
+    category: "games",
+    description: "Pac-Man is an arcade game developed by Namco and first released in Japan in May 1980. It was created by Japanese video game designer Toru Iwatani. It was licensed for distribution in the United States by Midway and released in October 1980.",
+    price: 110,
+    picture_url: "images/pacman.jpg"
+  },
+  {
+    id: "digdug",
+    name: "Dig Dug",
+    category: "games",
+    description: "Dig Dug is an arcade game developed and published by Namco in Japan in 1982. It runs on Namco Galaga hardware, and was published outside Japan by Atari, Inc..",
+    price: 110,
+    picture_url: "images/digdug.png"
+  },
+  {
+    id: "bioshock",
+    name: "BioShock",
+    category: "games",
+    description: "BioShock is a first-person shooter video game developed by 2K Boston and 2K Australia, and published by 2K Games.",
+    price: 110,
+    picture_url: "images/bioshock.jpg"
+  },
+  {
+    id: "frogger",
+    name: "Frogger",
+    category: "games",
+    description: "Frogger is a 1981 arcade game developed by Konami and licensed for North American distribution by Sega-Gremlin and worldwide by Sega itself.",
+    price: 110,
+    picture_url: "images/frogger.jpg"
   }
 ]
