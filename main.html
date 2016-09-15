@@ -16,11 +16,12 @@
       <!-- Catgeories menu left panel -->
       <div class="col-md-1">
         <!-- <h4>Categories</h4> -->
-        <div class="list-group">
-          <a id="books-cat" href="#" class="list-group-item"> Books</a>
-          <a id="music-cat" href="#" class="list-group-item"> Music</a>
-          <a id="movies-cat" href="#" class="list-group-item"> Movies</a>
-          <a id="games-cat" href="#" class="list-group-item"> Games</a>
+        <div id="categs-panel" class="list-group">
+          <a id="all-cat" href="#" class="list-group-item active">All</a>
+          <a id="books-cat" href="#" class="list-group-item">Books</a>
+          <a id="music-cat" href="#" class="list-group-item">Music</a>
+          <a id="movies-cat" href="#" class="list-group-item">Movies</a>
+          <a id="games-cat" href="#" class="list-group-item">Games</a>
         </div>
       </div>
 
@@ -126,6 +127,8 @@
         $('#musiclist').hide();
         $('#gameslist').hide();
         $('#movieslist').hide();
+
+        $('#all-cat').removeClass("active");
         $('#books-cat').removeClass("active");
         $('#music-cat').removeClass("active");
         $('#games-cat').removeClass("active");
@@ -150,6 +153,15 @@
         hideall();
         $('#movieslist').show();
         $('#movies-cat').addClass("active");
+      });
+      $('#all-cat').click(function(){
+        hideall();
+        $('#bookslist').show();
+        $('#musiclist').show();
+        $('#gameslist').show();
+        $('#movieslist').show();
+
+        $('#all-cat').addClass("active");
       });
     </script>
 
