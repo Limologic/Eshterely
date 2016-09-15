@@ -17,10 +17,10 @@
       <div class="col-md-1">
         <!-- <h4>Categories</h4> -->
         <div class="list-group">
-          <a href="#" class="list-group-item active"> Books</a>
-          <a href="#" class="list-group-item"> Music</a>
-          <a href="#" class="list-group-item"> Movies</a>
-          <a href="#" class="list-group-item"> Games</a>
+          <a id="books-cat" href="#" class="list-group-item"> Books</a>
+          <a id="music-cat" href="#" class="list-group-item"> Music</a>
+          <a id="movies-cat" href="#" class="list-group-item"> Movies</a>
+          <a id="games-cat" href="#" class="list-group-item"> Games</a>
         </div>
       </div>
 
@@ -28,23 +28,23 @@
       <div class="col-md-11">
       <!-- Row 1 BOOKS -->
       <div class="row">
-        <h3>Books</h3>
         <div id="bookslist">
-        <!-- This section will be filled dynamically by the script with list of books in products.js -->
+          <h3>Books</h3>
+          <!-- This section will be filled dynamically by the script with list of books in products.js -->
         </div>
       </div>
       <!-- Row 2 MUSIC-->
       <div class="row">
-        <h3>Music</h3>
         <div id="musiclist">
-        <!-- This section will be filled dynamically by the script with list of music albums in products.js -->
+          <h3>Music</h3>
+          <!-- This section will be filled dynamically by the script with list of music albums in products.js -->
         </div>
       </div>
       <!-- Row 3 GAMES-->
       <div class="row">
-        <h3>Games</h3>
         <div id="gameslist">
-        <!-- This section will be filled dynamically by the script with list of games in products.js -->
+          <h3>Games</h3>
+          <!-- This section will be filled dynamically by the script with list of games in products.js -->
         </div>
       </div>
     </content>
@@ -69,29 +69,6 @@
       loader("ourfooter.html","#getfooter")
     </script>
     <script>
-      // This function takes a product object and displays it in chosen html tag location
-      var display_a_prod = function(singleProduct, htmltag){
-
-        if(Array.isArray(singleProduct)){
-          for(i=0;i<myObj.length;i++)
-            display_a_prod(singleProduct[i]); // recursion because why not :D!
-        }
-
-        else{
-          for(key in singleProduct){
-            if(key === "id"){
-              $(htmltag).append('<div id="'+singleProduct[key]+'" class="panel panel-success col-md-4 book">');
-            }
-            else if(key === "picture_url"){
-              $(htmltag).append("<div>"+'<img style="max-width:150px" src="'+singleProduct[key]+'"/></div>');
-            }
-            else {
-              $(htmltag).append('<div class="panel-heading name">'+singleProduct[key]+'</div>');
-            }
-          }
-        }
-      }
-
       var displayProd = function(prods, htmltag, categ){
         //Return only the same category as passed to this function 'categ'
         var prod = _.filter(prods, function(checkprod){
@@ -143,6 +120,37 @@
       displayProd(products, '#bookslist', 'books');
       displayProd(products, '#musiclist', 'music');
       displayProd(products, '#gameslist', 'games');
+
+      var hideall = function(){
+        $('#bookslist').hide();
+        $('#musiclist').hide();
+        $('#gameslist').hide();
+        $('#movieslist').hide();
+        $('#books-cat').removeClass("active");
+        $('#music-cat').removeClass("active");
+        $('#games-cat').removeClass("active");
+        $('#movies-cat').removeClass("active");
+      }
+      $('#books-cat').click(function(){
+        hideall();
+        $('#bookslist').show();
+        $('#books-cat').addClass("active");
+      });
+      $('#music-cat').click(function(){
+        hideall();
+        $('#musiclist').show();
+        $('#music-cat').addClass("active");
+      });
+      $('#games-cat').click(function(){
+        hideall();
+        $('#gameslist').show();
+        $('#games-cat').addClass("active");
+      });
+      $('#movies-cat').click(function(){
+        hideall();
+        $('#movieslist').show();
+        $('#movies-cat').addClass("active");
+      });
     </script>
 
   </body>
