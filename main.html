@@ -3,315 +3,161 @@
   <head>
     <title>Eshterely.com: Your Shopping Zone!</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-
-    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> -->
     <link rel="stylesheet" href="eshterely.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
   </head>
   <body class="container">
-    <header class="row">
-      <nav class="nav navbar-inverse">
-        <div class="container-fluid">
+    <div id="getheader">
 
-          <!-- logo and brand name -->
-          <a class="navbar-brand" href="#">
-            <img id="logo" style="margin-top:-10px" height="40px" src="logo.png" alt="logo" />
-            <a class="navbar-brand" href="main.html">Eshterely <span class="small"> your shopping zone!</span></a>
-          </a>
+    </div>
 
-          <!-- Menu -->
-          <ul class="nav navbar-nav">
-            <li class="active"><a class=" " href="main.html">Home</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li class=""><a class=" " href="#">Books</a></li>
-                <li class=""><a class=" " href="#">Music</a></li>
-                <li class=""><a class=" " href="#">Movies</a></li>
-                <li class=""><a class=" " href="#">Games</a></li>
-                <!-- <li role="separator" class="divider"></li> -->
-              </ul>
-              <li class=""><a class="" href="cart.html">Cart <span class="badge">1</span></a></li>
-            </li>
-          </ul>
-
-          <!-- Menu (logged in user) -->
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Search</button>
-          </form>
-          <p class="navbar-text navbar-right">Signed in as <a href="index.html" class="navbar-link"><em>username</em></a></p>
-        </div>
-      </nav>
-    </header>
-
-
+    <!-- MAIN CONTENT CONTAINER -->
     <content class="row">
-      <!-- Row 1 -->
-      <div class="row">
-        <h3>Books</h3>
-        <div id="book1" class="panel panel-success col-md-4 book">
-          <div class="panel-heading name">The life &amp; death of I don't know who</div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-6">
-                <a href="details.html"><img class="content-img" src="http://pngimg.com/upload/book_PNG2111.png" alt="" /></a>
-              </div>
-              <div class="col-md-6">
-                <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</div>
-              </div>
-            </div>
-          </div>
-          <div class="panel-footer container-fluid">
-            <div class="col-md-3">
-              <div class="category">Book</div>
-            </div>
-            <div class="col-md-3">
-              <div class="price">120 LE</div>
-            </div>
-            <div class="col-md-3">
-              <a role="button" class="btn btn-primary btn-xs" href="cart.html">Add to cart</a>
-            </div>
-            <div class="col-md-3">
-              <a class="btn btn-success btn-xs" href="details.html">Read more</a>
-            </div>
-          </div>
-        </div>
-        <div id="book2" class="panel panel-success col-md-4 book">
-          <div class="panel-heading name">Javascript, the rabit hole</div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-6">
-                <a href="details.html"><img class="content-img" src="http://pngimg.com/upload/book_PNG2111.png" alt="" /></a>
-              </div>
-              <div class="col-md-6">
-                <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-              </div>
-            </div>
-          </div>
-          <div class="panel-footer container-fluid">
-            <div class="col-md-3">
-              <div class="category">Book</div>
-            </div>
-            <div class="col-md-3">
-              <div class="price">180 LE</div>
-            </div>
-            <div class="col-md-3">
-              <a role="button" class="btn btn-primary btn-xs" href="cart.html">Add to cart</a>
-            </div>
-            <div class="col-md-3">
-              <a class="btn btn-success btn-xs" href="details.html">Read more</a>
-            </div>
-          </div>
-        </div>
-        <div id="book3" class="panel panel-success col-md-4 book">
-          <div class="panel-heading name">UFOs, and other humanly objects</div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-6">
-                <a href="details.html"><img class="content-img" src="http://pngimg.com/upload/book_PNG2111.png" alt="" /></a>
-              </div>
-              <div class="col-md-6">
-                <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
-              </div>
-            </div>
-          </div>
-          <div class="panel-footer container-fluid">
-            <div class="col-md-3">
-              <div class="category">Book</div>
-            </div>
-            <div class="col-md-3">
-              <div class="price">90 LE</div>
-            </div>
-            <div class="col-md-3">
-              <a role="button" class="btn btn-primary btn-xs" href="cart.html">Add to cart</a>
-            </div>
-            <div class="col-md-3">
-              <a class="btn btn-success btn-xs" href="details.html">Read more</a>
-            </div>
-          </div>
+      <!-- Catgeories menu left panel -->
+      <div class="col-md-1">
+        <div id="categs-panel" class="list-group">
+          <!-- Categories will be filled dynamically -->
         </div>
       </div>
-      <!-- Row 2 -->
-      <div class="row">
-        <h3>Music</h3>
-        <div id="album1" class="panel panel-info col-md-4 music">
-          <div class="panel-heading name">The sound of silence</div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-6">
-                <a href="details.html"><img class="content-img" src="http://icons.iconarchive.com/icons/dtafalonso/android-lollipop/512/Headphones-Play-Music-icon.png" alt="" /></a>
-              </div>
-              <div class="col-md-6">
-                <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</div>
-              </div>
-            </div>
-          </div>
-          <div class="panel-footer container-fluid">
-            <div class="col-md-3">
-              <div class="category">Music</div>
-            </div>
-            <div class="col-md-3">
-              <div class="price">50 LE</div>
-            </div>
-            <div class="col-md-3">
-              <a role="button" class="btn btn-primary btn-xs" href="cart.html">Add to cart</a>
-            </div>
-            <div class="col-md-3">
-              <a class="btn btn-success btn-xs" href="details.html">Read more</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Row 3 -->
-      <div class="row">
-        <h3>Games</h3>
-        <div id="game1" class="panel panel-warning col-md-4 games">
-          <div class="panel-heading name">Gran Turismo</div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-6">
-                <a href="details.html"><img class="content-img" src="http://icons.iconarchive.com/icons/dtafalonso/android-lollipop/512/Play-Games-icon.png" alt="" /></a>
-              </div>
-              <div class="col-md-6">
-                <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</div>
-              </div>
-            </div>
-          </div>
-          <div class="panel-footer container-fluid">
-            <div class="col-md-3">
-              <div class="category">Games</div>
-            </div>
-            <div class="col-md-3">
-              <div class="price">500 LE</div>
-            </div>
-            <div class="col-md-3">
-              <a role="button" class="btn btn-primary btn-xs" href="cart.html">Add to cart</a>
-            </div>
-            <div class="col-md-3">
-              <a class="btn btn-success btn-xs" href="details.html">Read more</a>
-            </div>
-          </div>
-        </div>
-        <div id="game2" class="panel panel-warning col-md-4 games">
-          <div class="panel-heading name">Need For Speed</div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-6 center-block">
-                <a href="details.html"><img class="content-img" src="http://icons.iconarchive.com/icons/dtafalonso/android-lollipop/512/Play-Games-icon.png" alt="" /></a>
-              </div>
-              <div class="col-md-6">
-                <div class="desc small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-              </div>
-            </div>
-          </div>
-          <div class="panel-footer container-fluid">
-            <div class="col-md-3">
-              <div class="category">Games</div>
-            </div>
-            <div class="col-md-3">
-              <div class="price">450 LE</div>
-            </div>
-            <div class="col-md-3">
-              <a role="button" class="btn btn-primary btn-xs" href="cart.html">Add to cart</a>
-            </div>
-            <div class="col-md-3">
-              <a class="btn btn-success btn-xs" href="details.html">Read more</a>
-            </div>
-          </div>
-        </div>
+
+      <!-- main content list -->
+      <div id="main-content" class="col-md-11">
+        <!-- This section will be filled dynamically -->
       </div>
     </content>
 
 
 
-<!-- footer -->
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-<footer>
-    <div class="footer" id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                    <h3> GET TO KNOW US </h3>
-                    <ul>
-                        <li> <a href="#"> About Us </a> </li>
-                        <li> <a href="#"> Blog </a> </li>
-                        <li> <a href="#"> Pricing </a> </li>
-                        <li> <a href="#"> Customer Feedback </a> </li>
-                        <li> <a href="#"> FAQ </a> </li>
-
-                    </ul>
-                </div>
-                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                    <h3> LET US HELP YOU </h3>
-                    <ul>
-                        <li> <a href="#"> Phone: +1 000 123456 </a> </li>
-                        <li> <a href="#"> Email: info@eshterely.com </a> </li>
-                        <li> <a href="#"> Customer Service </a> </li>
-                        <li> <a href="#"> Order Tracking </a> </li>
-
-
-                    </ul>
-                </div>
-                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                    <h3> Pickup & Drop-off station</h3>
-                    <ul>
-                        <li> <a href="https://goo.gl/maps/FzgiY82hVhy"> Building 115, 26 Alexandria Desert Rd, Giza Governorate 12577 Cairo, Egypt </a> </li>
-                    </ul>
-                </div>
-                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                    <h3> About Us </h3>
-                    <ul>
-                        <li> <a href="#"> Best place to buy & sell or search online Books, Textbooks, Music, Movies & Games of all types! </a> </li>
-                    </ul>
-                </div>
-                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
-                    <h3> subscribe to our newsletter </h3>
-                    <ul>
-                        <li>
-                            <div class="input-append newsletter-box text-center">
-                                <input type="text" class="full text-center" placeholder="Email ">
-                                <button class="btn  bg-gray" type="button"> Submit <i class="fa fa-long-arrow-right"> </i> </button>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="social">
-                        <li> <a href="#"> <i class="facebook">   </i> </a> </li>
-                        <li> <a href="#"> <i class="twitter">   </i> </a> </li>
-                        <li> <a href="#"> <i class="google-plus">   </i> </a> </li>
-                        <li> <a href="#"> <i class="pinterest">   </i> </a> </li>
-                        <li> <a href="#"> <i class="youtube">   </i> </a> </li>
-                    </ul>
-                </div>
-            </div>
-            <!--/.row-->
-        </div>
-        <!--/.container-->
-    </div>
-    <!--/.footer-->
-
-    <div class="footer-bottom">
-        <div class="container">
-            <p class="pull-left"> Eshterely Inc. Copyrights &copy; 2016 All Rights Reserved. </p>
-            <div class="pull-right">
-                <ul class="nav nav-pills payments">
-                	<li><i class="Visa"></i></li>
-                    <li><i class="Mastercard"></i></li>
-                    <li><i class="Paypal"></i></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--/.footer-bottom-->
-</footer>
+  <!-- footer -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <div id="getfooter"></div>
 
 
     <!-- jQuery for drop down in Nav bar to work (categories)-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+    <script src="my-html-loader.js"></script>
+    <script src="products.js"></script>
+    <script src="underscore.js"></script>
+    <script>
+      loader("navheader.html","#getheader")
+      loader("ourfooter.html","#getfooter")
+    </script>
+    <script>
+      //Get list of categories from products list
+      var productCategories = (_.uniq(_.pluck(products, 'category')));
+
+      //Fill HTML categories left panel list with product categories
+      $('#categs-panel').append('<a id="all-cat" href="#" class="list-group-item active">All</a>');
+      for(var i=0; i<productCategories.length; i++){
+        $('#categs-panel').append('<a id="'+productCategories[i]+'-cat" href="#" class="list-group-item">'+productCategories[i]+'</a>');
+      }
+
+      //Displays a list of objects of the category 'categ' (passed to this function)
+      //in the HTML tag passed to this function 'htmltag'
+      var displayProd = function(prods, htmltag, categ){
+        // console.log('htmltag',htmltag);
+        // console.log('categ',categ);
+        var prod = _.filter(prods, function(checkprod){
+          if(checkprod.category===categ) return checkprod;
+        });
+        //console.log(prod);
+        var panelHeadStyle = "panel-default";
+        if(categ==="Books")
+          panelHeadStyle = "panel-success";
+        else if(categ==="Music")
+          panelHeadStyle = "panel-info";
+        else if(categ==="Games")
+          panelHeadStyle = "panel-warning";
+        //loop on all products to display them
+        for(var i=0;i<prod.length;i++)
+        {
+          var myString = "";
+          myString += '<div id="'+prod[i].id+'" class="panel '+panelHeadStyle+' col-md-4">';
+          myString += '  <div class="panel-heading name '+categ+'">'+prod[i].name+'</div>';
+          myString += '  <div class="panel-body">';
+          myString += '    <div class="row">';
+          myString += '      <div class="col-md-6">';
+          myString += '        <a href="details.html"><img class="content-img" src="'+prod[i].picture_url+'" alt="" /></a>';
+          myString += '      </div>';
+          myString += '      <div class="col-md-6">'
+          myString += '        <div class="desc small">'+prod[i].description+'</div>';
+          myString += '      </div>';
+          myString += '    </div>';
+          myString += '  </div>';
+          myString += '  <div class="panel-footer container-fluid">';
+          myString += '    <div class="col-md-3">';
+          myString += '      <div class="category">'+prod[i].category+'</div>';
+          myString += '    </div>';
+          myString += '    <div class="col-md-3">';
+          myString += '      <div class="price">'+prod[i].price+'</div>';
+          myString += '    </div>';
+          myString += '    <div class="col-md-3">';
+          myString += '      <a role="button" class="btn btn-primary btn-xs cart-btn" href="#">Add to cart</a>';
+          myString += '    </div>';
+          myString += '    <div class="col-md-3">';
+          myString += '      <a class="btn btn-success btn-xs" href="details.html">Read more</a>';
+          myString += '    </div>';
+          myString += '  </div>';
+          myString += '</div>';
+
+          $(htmltag).append(myString);
+        }
+      }
+
+      //Fill HTML main content section with products from products list
+      for(var i=0; i<productCategories.length; i++){
+        var newSection = '<div class="row">';
+        newSection += '<div id="'+productCategories[i]+'-list">';
+        newSection += '<h3>'+productCategories[i]+'</h3>';
+        newSection += '</div>';
+        newSection += '</div>';
+        $('#main-content').append(newSection);
+        displayProd(products, '#'+productCategories[i]+'-list', productCategories[i]);
+      }
+
+      //Dynamically hide content and remove 'active' class from left panel
+      var hideAll = function(){
+        $('#all-cat').removeClass("active");
+        for(var i=0; i<productCategories.length; i++){
+          $('#'+productCategories[i]+'-cat').removeClass("active");
+          $('#'+productCategories[i]+'-list').hide();
+        }
+      }
+
+      // Handle select category click functions
+      $('#categs-panel').on('click','a', function(){
+        //User clicked ALL
+        if($(this).text()==="All"){
+          hideAll();
+          $('#all-cat').addClass("active");
+          for(var i=0; i<productCategories.length; i++){
+            $('#'+productCategories[i]+'-list').show();
+          }
+        }
+        // User selected a category
+        else{
+          hideAll();
+          $('#'+$(this).text()+'-list').show();
+          $('#'+$(this).text()+'-cat').addClass("active");
+          // console.log($(this).text());
+        }
+      });
+
+      var userCart=[];
+      var cartItemsCount=0;
+      $('.cart-btn').click(function(e){
+        //console.log($(e.target).parent()[0].offsetParent.id);
+        userCart.push($(e.target).parent()[0].offsetParent.id)
+        cartItemsCount++;
+        localStorage.setItem('my-cart', JSON.stringify(userCart));
+        localStorage.setItem('cartCount', JSON.stringify(cartItemsCount));
+        $('.badge').html(JSON.parse(localStorage.getItem('my-cart')));
+        //JSON.parse(localStorage.getItem('my-cart'))
+      });
+
+    </script>
 
   </body>
 </html>
