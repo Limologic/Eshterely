@@ -102,5 +102,13 @@ var products = [
     description: "Frogger is a 1981 arcade game developed by Konami and licensed for North American distribution by Sega-Gremlin and worldwide by Sega itself.",
     price: 110,
     picture_url: "images/frogger.jpg"
+  },
+  {
+    id: "forrest-gump",
+    name: "Forrest Gump",
+    category: "Movies",
+    description: "Slow-witted Forrest Gump (Tom Hanks) has never thought of himself as disadvantaged, and thanks to his supportive mother (Sally Field), he leads anything but a restricted life. Whether dominating on the gridiron as a college football star, fighting in Vietnam or captaining a shrimp boat, Forrest inspires people with his childlike optimism. But one person Forrest cares about most may be the most difficult to save -- his childhood love, the sweet but troubled Jenny (Robin Wright).",
+    price: 50,
+    picture_url: "images/forrestgump.jpg"
   }
 ]
