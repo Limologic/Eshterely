@@ -17,36 +17,13 @@
       <div class="col-md-1">
         <!-- <h4>Categories</h4> -->
         <div id="categs-panel" class="list-group">
-          <a id="all-cat" href="#" class="list-group-item active">All</a>
-          <a id="books-cat" href="#" class="list-group-item">Books</a>
-          <a id="music-cat" href="#" class="list-group-item">Music</a>
-          <a id="movies-cat" href="#" class="list-group-item">Movies</a>
-          <a id="games-cat" href="#" class="list-group-item">Games</a>
+          <!-- Categories will be filled dynamically -->
         </div>
       </div>
 
-      <!-- Categories content -->
-      <div class="col-md-11">
-      <!-- Row 1 BOOKS -->
-      <div class="row">
-        <div id="bookslist">
-          <h3>Books</h3>
-          <!-- This section will be filled dynamically by the script with list of books in products.js -->
-        </div>
-      </div>
-      <!-- Row 2 MUSIC-->
-      <div class="row">
-        <div id="musiclist">
-          <h3>Music</h3>
-          <!-- This section will be filled dynamically by the script with list of music albums in products.js -->
-        </div>
-      </div>
-      <!-- Row 3 GAMES-->
-      <div class="row">
-        <div id="gameslist">
-          <h3>Games</h3>
-          <!-- This section will be filled dynamically by the script with list of games in products.js -->
-        </div>
+      <!-- main content list -->
+      <div id="main-content" class="col-md-11">
+        <!-- This section will be filled dynamically -->
       </div>
     </content>
 
@@ -54,7 +31,6 @@
 
   <!-- footer -->
     <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
-
     <div id="getfooter"></div>
 
 
@@ -70,19 +46,30 @@
       loader("ourfooter.html","#getfooter")
     </script>
     <script>
+      //Get list of categories from products list
+      var productCategories = (_.uniq(_.pluck(products, 'category')));
+
+      //Fill HTML categories left panel list with product categories
+      $('#categs-panel').append('<a id="all-cat" href="#" class="list-group-item active">All</a>');
+      for(var i=0; i<productCategories.length; i++){
+        $('#categs-panel').append('<a id="'+productCategories[i]+'-cat" href="#" class="list-group-item">'+productCategories[i]+'</a>');
+      }
+
+      //Displays a list of objects of the category 'categ' (passed to this function)
+      //in the HTML tag passed to this function 'htmltag'
       var displayProd = function(prods, htmltag, categ){
-        //Displays a list of objects of the category 'categ' (passed to this function)
-        //in the HTML tag passed to this function 'htmltag'
+        // console.log('htmltag',htmltag);
+        // console.log('categ',categ);
         var prod = _.filter(prods, function(checkprod){
           if(checkprod.category===categ) return checkprod;
         });
-        console.log(prod);
+        //console.log(prod);
         var panelHeadStyle = "panel-default";
-        if(categ==="books")
+        if(categ==="Books")
           panelHeadStyle = "panel-success";
-        else if(categ==="music")
+        else if(categ==="Music")
           panelHeadStyle = "panel-info";
-        else if(categ==="games")
+        else if(categ==="Games")
           panelHeadStyle = "panel-warning";
 
         for(var i=0;i<prod.length;i++)
@@ -120,52 +107,45 @@
         }
       }
 
-      //Fill HTML section with products from products list
-      displayProd(products, '#bookslist', 'books');
-      displayProd(products, '#musiclist', 'music');
-      displayProd(products, '#gameslist', 'games');
-
-      var hideall = function(){
-        $('#bookslist').hide();
-        $('#musiclist').hide();
-        $('#gameslist').hide();
-        $('#movieslist').hide();
-
-        $('#all-cat').removeClass("active");
-        $('#books-cat').removeClass("active");
-        $('#music-cat').removeClass("active");
-        $('#games-cat').removeClass("active");
-        $('#movies-cat').removeClass("active");
+      //Fill HTML main content section with products from products list
+      for(var i=0; i<productCategories.length; i++){
+        var newSection = '<div class="row">';
+        newSection += '<div id="'+productCategories[i]+'-list">';
+        newSection += '<h3>'+productCategories[i]+'</h3>';
+        newSection += '</div>';
+        newSection += '</div>';
+        $('#main-content').append(newSection);
+        displayProd(products, '#'+productCategories[i]+'-list', productCategories[i]);
       }
-      $('#books-cat').click(function(){
-        hideall();
-        $('#bookslist').show();
-        $('#books-cat').addClass("active");
-      });
-      $('#music-cat').click(function(){
-        hideall();
-        $('#musiclist').show();
-        $('#music-cat').addClass("active");
-      });
-      $('#games-cat').click(function(){
-        hideall();
-        $('#gameslist').show();
-        $('#games-cat').addClass("active");
-      });
-      $('#movies-cat').click(function(){
-        hideall();
-        $('#movieslist').show();
-        $('#movies-cat').addClass("active");
-      });
-      $('#all-cat').click(function(){
-        hideall();
-        $('#bookslist').show();
-        $('#musiclist').show();
-        $('#gameslist').show();
-        $('#movieslist').show();
 
-        $('#all-cat').addClass("active");
+      //Dynamically hide content and remove 'active' class from left panel
+      var hideAll = function(){
+        $('#all-cat').removeClass("active");
+        for(var i=0; i<productCategories.length; i++){
+          $('#'+productCategories[i]+'-cat').removeClass("active");
+          $('#'+productCategories[i]+'-list').hide();
+        }
+      }
+
+      // Handle select category click functions
+      $('#categs-panel').on('click','a', function(){
+        //User clicked ALL
+        if($(this).text()==="All"){
+          hideAll();
+          $('#all-cat').addClass("active");
+          for(var i=0; i<productCategories.length; i++){
+            $('#'+productCategories[i]+'-list').show();
+          }
+        }
+        // User selected a category
+        else{
+          hideAll();
+          $('#'+$(this).text()+'-list').show();
+          $('#'+$(this).text()+'-cat').addClass("active");
+          // console.log($(this).text());
+        }
       });
+
     </script>
 
   </body>
