@@ -15,7 +15,6 @@
     <content class="row">
       <!-- Catgeories menu left panel -->
       <div class="col-md-1">
-        <!-- <h4>Categories</h4> -->
         <div id="categs-panel" class="list-group">
           <!-- Categories will be filled dynamically -->
         </div>
@@ -71,7 +70,7 @@
           panelHeadStyle = "panel-info";
         else if(categ==="Games")
           panelHeadStyle = "panel-warning";
-
+        //loop on all products to display them
         for(var i=0;i<prod.length;i++)
         {
           var myString = "";
@@ -95,7 +94,7 @@
           myString += '      <div class="price">'+prod[i].price+'</div>';
           myString += '    </div>';
           myString += '    <div class="col-md-3">';
-          myString += '      <a role="button" class="btn btn-primary btn-xs" href="cart.html">Add to cart</a>';
+          myString += '      <a role="button" class="btn btn-primary btn-xs cart-btn" href="#">Add to cart</a>';
           myString += '    </div>';
           myString += '    <div class="col-md-3">';
           myString += '      <a class="btn btn-success btn-xs" href="details.html">Read more</a>';
@@ -144,6 +143,18 @@
           $('#'+$(this).text()+'-cat').addClass("active");
           // console.log($(this).text());
         }
+      });
+
+      var userCart=[];
+      var cartItemsCount=0;
+      $('.cart-btn').click(function(e){
+        //console.log($(e.target).parent()[0].offsetParent.id);
+        userCart.push($(e.target).parent()[0].offsetParent.id)
+        cartItemsCount++;
+        localStorage.setItem('my-cart', JSON.stringify(userCart));
+        localStorage.setItem('cartCount', JSON.stringify(cartItemsCount));
+        $('.badge').html(JSON.parse(localStorage.getItem('my-cart')));
+        //JSON.parse(localStorage.getItem('my-cart'))
       });
 
     </script>
