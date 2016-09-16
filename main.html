@@ -71,7 +71,8 @@
     </script>
     <script>
       var displayProd = function(prods, htmltag, categ){
-        //Return only the same category as passed to this function 'categ'
+        //Displays a list of objects of the category 'categ' (passed to this function)
+        //in the HTML tag passed to this function 'htmltag'
         var prod = _.filter(prods, function(checkprod){
           if(checkprod.category===categ) return checkprod;
         });
@@ -118,6 +119,8 @@
           $(htmltag).append(myString);
         }
       }
+
+      //Fill HTML section with products from products list
       displayProd(products, '#bookslist', 'books');
       displayProd(products, '#musiclist', 'music');
       displayProd(products, '#gameslist', 'games');
