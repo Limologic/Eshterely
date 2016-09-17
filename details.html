@@ -4,7 +4,7 @@
 <head>
     <title>Eshterely.com: Your Shopping Zone!</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.css">
+    <!-- <link rel="stylesheet" href="css/font-awesome.css"> -->
     <link rel="stylesheet" href="eshterely.css">
     <!-- <link rel="stylesheet" href="index.css"> -->
 
@@ -29,9 +29,13 @@
                 <div class="thumbnail">
                     <img class="img-responsive" src="http://www.themarysue.com/wp-content/uploads/2015/10/cursed-child-stage-play-eighth-story.jpg" alt="">
                     <div class="caption-full">
-                        <a href="#" class="btn btn-info btn-lg pull-right">
-                            <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart </a>
-                        <h3 class="pull-right"> $24.99 </h3>
+                      <!-- <br> -->
+                        <a href="#" class="btn btn-info btn-lg pull-right resize">
+                            <span class="glyphicon glyphicon-shopping-cart resize"></span> Add to Cart </a>
+                            <p class="pull-right resize"> Hardcover $17.98 </p>
+
+
+
                         <h4><a href="#">Harry Potter And The Cursed Child Midnight</a></h4>
                         <p>PRE-ORDER YOUR COPY NOW!</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -103,25 +107,47 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="my-html-loader.js"></script>
         <script>
-          var userCart = [];
-          var cartItemsCount=0;
-          var getCartCount = function(){
-            userCart = JSON.parse(localStorage.getItem('my-cart'));
-            cartItemsCount = JSON.parse(localStorage.getItem('cartCount'));
-            if(cartItemsCount===null){
-              userCart = [];
-              cartItemsCount=0;
-              localStorage.setItem('my-cart', JSON.stringify(userCart));
-              localStorage.setItem('cartCount', 0);
-            }
-            console.log("CART COUNT",cartItemsCount);
-            $('.badge').html(cartItemsCount);
-          }
-          loader("navheader.html", "#getheader", getCartCount);
-          loader("ourfooter.html", "#getfooter")
+            loader("navheader.html", "#getheader")
+            loader("ourfooter.html", "#getfooter")
         </script>
         <script>
-          // $('.badge').html(JSON.parse(localStorage.getItem('cartCount')));
+            $('.badge').html(JSON.parse(localStorage.getItem('cartCount')));
+        </script>
+
+        <!-- jQuery for drop down in Nav bar to work (categories)-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="my-html-loader.js"></script>
+        <script>
+            var userCart = [];
+            var cartItemsCount = 0;
+            var getCartCount = function() {
+                userCart = JSON.parse(localStorage.getItem('my-cart'));
+                cartItemsCount = JSON.parse(localStorage.getItem('cartCount'));
+                if (cartItemsCount === null) {
+                    userCart = [];
+                    cartItemsCount = 0;
+                    localStorage.setItem('my-cart', JSON.stringify(userCart));
+                    localStorage.setItem('cartCount', 0);
+                }
+                console.log("CART COUNT", cartItemsCount);
+                $('.badge').html(cartItemsCount);
+            }
+            loader("navheader.html", "#getheader", getCartCount);
+            loader("ourfooter.html", "#getfooter")
+        </script>
+        <script>
+            // $('.badge').html(JSON.parse(localStorage.getItem('cartCount')));
+
+
+
+            //GET CURRENT CART DETAILS
+            // $(document).ready(function(){
+            //   userCart = JSON.parse(localStorage.getItem('my-cart'));
+            //   cartItemsCount = JSON.parse(localStorage.getItem('cartCount'));
+            //   console.log("CART COUNT",JSON.parse(localStorage.getItem('cartCount')));
+            //   $('.badge').html(JSON.parse(localStorage.getItem('cartCount')));
+            // })
 
             // Handle Add to cart button click function
             $('.cart-btn').click(function(e) {

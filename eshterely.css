@@ -26,6 +26,10 @@
   display: block;
   margin: 0 auto;
 }
+
+.resize{
+font-size: 13px;
+}
 .book{
 }
 
@@ -190,4 +194,13 @@
 
 table{
   margin-top: 20px;
+}
+.pull-right {
+  padding: 0;
+}
+
+.btn-info{
+  position: relative;
+  right: 8%;
+  top: 30px;
 }
