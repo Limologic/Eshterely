@@ -153,8 +153,8 @@
         cartItemsCount++;
         localStorage.setItem('my-cart', JSON.stringify(userCart));
         localStorage.setItem('cartCount', JSON.stringify(cartItemsCount));
-        $('.badge').html(JSON.parse(localStorage.getItem('my-cart')));
-        //JSON.parse(localStorage.getItem('my-cart'))
+        $('.badge').html(JSON.parse(localStorage.getItem('cartCount')));
+        //JSON.parse(localStorage.getItem('cartItemsCount'))
       });
 
     </script>

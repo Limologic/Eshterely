@@ -5,7 +5,7 @@
   <title>Eshterely.com: Your Shopping Zone!</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/font-awesome.css">
-  <link rel="stylesheet" href="index.css">
+  <!-- <link rel="stylesheet" href="index.css"> -->
 </head>
 <body class="container">
   <div id="getheader">
@@ -26,7 +26,7 @@
             <img class="img-responsive" src="http://www.themarysue.com/wp-content/uploads/2015/10/cursed-child-stage-play-eighth-story.jpg" alt="">
             <div class="caption-full">
               <a href="#" class="btn btn-info btn-lg">
-                <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart </a>
+                <span class="glyphicon glyphicon-shopping-cart cart-btn"></span> Add to Cart </a>
                 <h3 class="pull-right"> $24.99 </h3>
                 <h4><a href="#">Harry Potter And The Cursed Child Midnight</a></h4>
                 <p>PRE-ORDER YOUR COPY NOW!</p>
@@ -104,6 +104,25 @@
     loader("navheader.html","#getheader")
     loader("ourfooter.html","#getfooter")
   </script>
+  <script>
+    // $('.badge').html(JSON.parse(localStorage.getItem('cartCount')));
+
+    //GET CURRENT CART DETAILS
+    var userCart=JSON.parse(localStorage.getItem('my-cart'));
+    var cartItemsCount=JSON.parse(localStorage.getItem('cartCount'));
+
+    // Handle Add to cart button click function
+    $('.cart-btn').click(function(e){
+      //console.log($(e.target).parent()[0].offsetParent.id);
+      userCart.push($(e.target).parent()[0].offsetParent.id)
+      cartItemsCount++;
+      localStorage.setItem('my-cart', JSON.stringify(userCart));
+      localStorage.setItem('cartCount', JSON.stringify(cartItemsCount));
+      $('.badge').html(JSON.parse(localStorage.getItem('cartCount')));
+      //JSON.parse(localStorage.getItem('cartItemsCount'))
+    });
+  </script>
+
 </body>
 
 </html>
