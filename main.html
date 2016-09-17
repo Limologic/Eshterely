@@ -42,15 +42,15 @@
     <script src="underscore.js"></script>
     <script>
       var userCart = [];
-      var cartItemsCount;
+      var cartItemsCount=0;
       var getCartCount = function(){
         userCart = JSON.parse(localStorage.getItem('my-cart'));
         cartItemsCount = JSON.parse(localStorage.getItem('cartCount'));
         console.log("CART COUNT",JSON.parse(localStorage.getItem('cartCount')));
-        $('.badge').html(JSON.parse(localStorage.getItem('cartCount')));
+        $('.badge').html(cartItemsCount);
       }
       loader("navheader.html", "#getheader", getCartCount);
-      loader("ourfooter.html","#getfooter")
+      loader("ourfooter.html", "#getfooter")
     </script>
     <script>
       //Get list of categories from products list

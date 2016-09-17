@@ -116,14 +116,14 @@
         <script src="my-html-loader.js"></script>
         <script>
           var userCart = [];
-          var cartItemsCount;
-          var ahmed = function(){
+          var cartItemsCount=0;
+          var getCartCount = function(){
             userCart = JSON.parse(localStorage.getItem('my-cart'));
             cartItemsCount = JSON.parse(localStorage.getItem('cartCount'));
             console.log("CART COUNT",JSON.parse(localStorage.getItem('cartCount')));
-            $('.badge').html(JSON.parse(localStorage.getItem('cartCount')));
+            $('.badge').html(cartItemsCount);
           }
-          loader("navheader.html", "#getheader", ahmed);
+          loader("navheader.html", "#getheader", getCartCount);
           loader("ourfooter.html", "#getfooter")
 
 
