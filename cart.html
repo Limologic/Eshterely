@@ -18,37 +18,19 @@
       <p><h2>Cart<span style="color:#e74c3c;font-weight:bold">Page</span></h2></p>
 
       <div>
-          <table class="table table-striped">
+          <table id="carttable" class="table table-striped">
               <tr>
                   <td><h4 class="style">Item</h4></td>
                       <td><h4 class="Color">Quantity</h4></td>
                       <td><h4 class="style-color">Price</h4></td>
               </tr>
-              <tr>
+
+              <!-- <tr>
                   <td>Mobile</td>
                   <td>1</td>
                   <td>3550<span style="color:#2980b9;font-weight:bold">L.E</span></td>
-              </tr>
-              <tr>
-                  <td>Book</td>
-                  <td>5</td>
-                  <td>250<span style="color:#2980b9;font-weight:bold">L.E</span></td>
-              </tr>
-              <tr>
-                  <td>Music</td>
-                  <td>12</td>
-                  <td>70<span style="color:#2980b9;font-weight:bold">L.E</span></td>
-              </tr>
-              <tr>
-                  <td>Laptop</td>
-                  <td>1</td>
-                  <td>6599<span style="color:#2980b9;font-weight:bold">L.E</span></td>
-              </tr>
-              <tr>
-                  <td>Shoes</td>
-                  <td>1</td>
-                  <td>400<span style="color:#2980b9;font-weight:bold">L.E</span></td>
-              </tr>
+              </tr> -->
+
           </table>
           <div class="row">
               <button type="button" class="btn btn-primary btn-lg pull-right">CheckOut</button>
@@ -94,6 +76,24 @@
               $('.badge').html(JSON.parse(localStorage.getItem('cartCount')));
               //JSON.parse(localStorage.getItem('cartItemsCount'))
           });
+      </script>
+      <script>
+          var x = JSON.parse(localStorage.getItem('my-cart'));
+          for (var i = 0; i < x.length; i++) {
+              console.log(x[i]);
+            var myHTML = "<tr>";
+            myHTML+= "<td>"
+            myHTML+= x[i].name
+            myHTML+= "</td>"
+            myHTML+= "<td>"
+            myHTML+= x[i].price
+            myHTML+= "</td>"
+            myHTML+= "</tr>"
+
+            $('#carttable').append(myHTML);
+          }
+
+
       </script>
 
 
