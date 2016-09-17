@@ -103,18 +103,6 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="my-html-loader.js"></script>
         <script>
-            loader("navheader.html", "#getheader")
-            loader("ourfooter.html", "#getfooter")
-        </script>
-        <script>
-            $('.badge').html(JSON.parse(localStorage.getItem('cartCount')));
-        </script>
-
-        <!-- jQuery for drop down in Nav bar to work (categories)-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="my-html-loader.js"></script>
-        <script>
           var userCart = [];
           var cartItemsCount=0;
           var getCartCount = function(){
@@ -134,16 +122,6 @@
         </script>
         <script>
           // $('.badge').html(JSON.parse(localStorage.getItem('cartCount')));
-
-
-
-            //GET CURRENT CART DETAILS
-            // $(document).ready(function(){
-            //   userCart = JSON.parse(localStorage.getItem('my-cart'));
-            //   cartItemsCount = JSON.parse(localStorage.getItem('cartCount'));
-            //   console.log("CART COUNT",JSON.parse(localStorage.getItem('cartCount')));
-            //   $('.badge').html(JSON.parse(localStorage.getItem('cartCount')));
-            // })
 
             // Handle Add to cart button click function
             $('.cart-btn').click(function(e) {
