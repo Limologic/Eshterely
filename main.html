@@ -111,7 +111,7 @@
           myString += '      <a role="button" class="btn btn-primary btn-xs cart-btn" href="#">Add to cart</a>';
           myString += '    </div>';
           myString += '    <div class="col-md-3">';
-          myString += '      <a class="btn btn-success btn-xs" href="details.html">Read more</a>';
+          myString += '      <a class="btn btn-success btn-xs details-btn" href="details.html">Read more</a>';
           myString += '    </div>';
           myString += '  </div>';
           myString += '</div>';
@@ -175,6 +175,17 @@
         $('.badge').html(JSON.parse(localStorage.getItem('cartCount')));
         //JSON.parse(localStorage.getItem('cartItemsCount'))
       });
+
+      $('.details-btn').click(function(e){
+        var prodDetails={};
+        for (var i = 0; i < products.length; i++) {
+          if(products[i].id === $(e.target).parent()[0].offsetParent.id){
+            prodDetails = products[i];
+          }
+        }
+        localStorage.setItem('p_details', JSON.stringify(prodDetails));
+        console.log(JSON.parse(localStorage.getItem('p_details')));
+      })
 
     </script>
 

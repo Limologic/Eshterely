@@ -4,7 +4,7 @@
 <head>
     <title>Eshterely.com: Your Shopping Zone!</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="css/font-awesome.css"> -->
+    <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="eshterely.css">
     <!-- <link rel="stylesheet" href="index.css"> -->
 
@@ -27,9 +27,12 @@
             </div>
             <div class="col-md-11">
                 <div class="thumbnail">
-                    <img class="img-responsive" src="http://www.themarysue.com/wp-content/uploads/2015/10/cursed-child-stage-play-eighth-story.jpg" alt="">
+                    <div id="more_details">
+
+                    </div>
+                    <!-- <img class="img-responsive" src="http://www.themarysue.com/wp-content/uploads/2015/10/cursed-child-stage-play-eighth-story.jpg" alt="">
                     <div class="caption-full">
-                      <!-- <br> -->
+
                         <a href="#" class="btn btn-info btn-lg pull-right resize">
                             <span class="glyphicon glyphicon-shopping-cart resize"></span> Add to Cart </a>
                             <p class="pull-right resize"> Hardcover $17.98 </p>
@@ -40,7 +43,7 @@
                         <p>PRE-ORDER YOUR COPY NOW!</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                             Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                    </div>
+                    </div> -->
                     <div class="ratings">
                         <p class="pull-right">3 Reviews</p>
                         <p>
@@ -159,6 +162,20 @@
                 $('.badge').html(JSON.parse(localStorage.getItem('cartCount')));
                 //JSON.parse(localStorage.getItem('cartItemsCount'))
             });
+
+            var detHTML = "<div class=row>";
+            var aProd = JSON.parse(localStorage.getItem('p_details'));
+            detHTML+= '  <div class="col-md-9">'
+            detHTML+= aProd.description
+            detHTML+= '  </div>'
+            detHTML+= '  <div class="col-md-3">'
+
+            detHTML+= '<img width="200px" src="'+aProd.picture_url+'" alt="" />'
+            detHTML+= '  </div>'
+            detHTML+= '</div>'
+            $('#more_details').append(detHTML)
+
+
         </script>
 
     </body>
