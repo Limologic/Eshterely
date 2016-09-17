@@ -163,7 +163,12 @@
       var cartItemsCount=0;
       $('.cart-btn').click(function(e){
         //console.log($(e.target).parent()[0].offsetParent.id);
-        userCart.push($(e.target).parent()[0].offsetParent.id)
+        for (var i = 0; i < products.length; i++) {
+          if(products[i].id === $(e.target).parent()[0].offsetParent.id){
+            userCart.push(products[i]);
+          }
+        }
+        // userCart.push($(e.target).parent()[0].offsetParent.id)
         cartItemsCount++;
         localStorage.setItem('my-cart', JSON.stringify(userCart));
         localStorage.setItem('cartCount', JSON.stringify(cartItemsCount));
