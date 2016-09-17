@@ -41,7 +41,15 @@
     <script src="products.js"></script>
     <script src="underscore.js"></script>
     <script>
-      loader("navheader.html","#getheader")
+      var userCart = [];
+      var cartItemsCount;
+      var getCartCount = function(){
+        userCart = JSON.parse(localStorage.getItem('my-cart'));
+        cartItemsCount = JSON.parse(localStorage.getItem('cartCount'));
+        console.log("CART COUNT",JSON.parse(localStorage.getItem('cartCount')));
+        $('.badge').html(JSON.parse(localStorage.getItem('cartCount')));
+      }
+      loader("navheader.html", "#getheader", getCartCount);
       loader("ourfooter.html","#getfooter")
     </script>
     <script>
