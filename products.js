@@ -1,10 +1,10 @@
 var products = [
   {
     id: "the-great-gatsby",
-    name: "The Great Gatsby	",
+    name: "Harry Poter and the cursed child	",
     category: "Books",
     description: "In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    price: 25,
+    price: 17,
     picture_url: "images/greatgatsby.jpg"
   },
   {
