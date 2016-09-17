@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="eshterely.css">
     <!-- <link rel="stylesheet" href="index.css"> -->
+
 </head>
 
 <body class="container">
@@ -89,6 +90,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
         <!-- /.container -->
@@ -106,6 +108,33 @@
         </script>
         <script>
             $('.badge').html(JSON.parse(localStorage.getItem('cartCount')));
+        </script>
+
+        <!-- jQuery for drop down in Nav bar to work (categories)-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="my-html-loader.js"></script>
+        <script>
+          loader("navheader.html", "#getheader")
+          loader("ourfooter.html", "#getfooter")
+        </script>
+        <script>
+          // $('.badge').html(JSON.parse(localStorage.getItem('cartCount')));
+
+            //GET CURRENT CART DETAILS
+            var userCart = JSON.parse(localStorage.getItem('my-cart'));
+            var cartItemsCount = JSON.parse(localStorage.getItem('cartCount'));
+
+            // Handle Add to cart button click function
+            $('.cart-btn').click(function(e) {
+                //console.log($(e.target).parent()[0].offsetParent.id);
+                userCart.push($(e.target).parent()[0].offsetParent.id)
+                cartItemsCount++;
+                localStorage.setItem('my-cart', JSON.stringify(userCart));
+                localStorage.setItem('cartCount', JSON.stringify(cartItemsCount));
+                $('.badge').html(JSON.parse(localStorage.getItem('cartCount')));
+                //JSON.parse(localStorage.getItem('cartItemsCount'))
+            });
         </script>
 
     </body>
