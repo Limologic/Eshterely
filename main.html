@@ -46,7 +46,13 @@
       var getCartCount = function(){
         userCart = JSON.parse(localStorage.getItem('my-cart'));
         cartItemsCount = JSON.parse(localStorage.getItem('cartCount'));
-        console.log("CART COUNT",JSON.parse(localStorage.getItem('cartCount')));
+        if(cartItemsCount===null){
+          userCart = [];
+          cartItemsCount=0;
+          localStorage.setItem('my-cart', JSON.stringify(userCart));
+          localStorage.setItem('cartCount', 0);
+        }
+        console.log("CART COUNT",cartItemsCount);
         $('.badge').html(cartItemsCount);
       }
       loader("navheader.html", "#getheader", getCartCount);
