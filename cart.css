@@ -1,3 +1,28 @@
+h2 {
+    margin: 7px;
+}
+
+
+
+.style {
+    color: rgba(192, 57, 43,1.0);
+}
+
+.Color {
+    color: rgba(192, 57, 43,1.0);
+}
+
+.style-color {
+    color: rgba(192, 57, 43,1.0);
+}
+
+.checkout {
+    margin: 500px;
+
+    float: right;
+
+
+}
 
 
 
