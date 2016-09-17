@@ -30,7 +30,7 @@
 }
 
 .music{
-  
+
 }
 
 .games{
@@ -68,7 +68,7 @@
 	border-bottom: 1px solid #CCCCCC;
 	border-top: 1px solid #DDDDDD;
   position: relative;
-
+  margin-top: 10px;
 }
 .footer p {
 	margin: 0;
@@ -186,4 +186,8 @@
 }
 .payments {
 	font-size: 1.5em;
+}
+
+table{
+  margin-top: 20px;
 }
