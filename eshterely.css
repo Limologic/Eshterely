@@ -50,6 +50,11 @@
   min-height: 250px;
   /*height: 250px;*/
 }
+.checkout {
+    margin: 20px;
+
+    float: right;
+}
 
 .full {
     width: 100%;
