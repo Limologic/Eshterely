@@ -34,7 +34,7 @@
           </table>
           <div class="row">
               <button type="button" class="btn btn-primary btn-lg pull-right">CheckOut</button>
-              <!-- <button type="button" class="btn btn-warning btn-lg pull-left">Clear cart!</button> -->
+              <button type="button" id="clearall" class="btn btn-warning btn-lg pull-left">Clear cart!</button>
           </div>
 
 
@@ -97,6 +97,14 @@
 
             $('#carttable').append(myHTML);
           }
+
+          $('#clearall').click(function(){
+            userCart = [];
+            cartItemsCount=0;
+            localStorage.setItem('my-cart', JSON.stringify(userCart));
+            localStorage.setItem('cartCount', 0);
+            $('.badge').html(cartItemsCount);
+          })
 
 
       </script>
